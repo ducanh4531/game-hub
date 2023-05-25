@@ -1,14 +1,15 @@
-import { HStack, Image, Text } from "@chakra-ui/react";
+import { HStack, Image } from "@chakra-ui/react";
 
+import ColorModeSwitch from "./ColorModeSwitch";
 import logo from "../assets/logo.webp"; //webp img are highly optimized img for web
 
 const NavBar = () => {
 	return (
-		<HStack>
+		<HStack justify="space-between" padding="10px">
 			{" "}
 			//horizontal stack: all items sorted in horizontal
 			<Image src={logo} boxSize="60px" />
-			<Text>Nav Bar</Text>
+			<ColorModeSwitch />
 		</HStack>
 	);
 };
