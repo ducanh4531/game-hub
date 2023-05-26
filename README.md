@@ -6,4 +6,4 @@ start project:
 yarn install
 yarn dev
 
-create props interface
+in services, image-url.ts
