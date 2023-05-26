@@ -6,4 +6,4 @@ start project:
 yarn install
 yarn dev
 
-in services, image-url.ts
+create hook for loading
