@@ -26,7 +26,7 @@ const useData = <T>(endpoint: string) => {
 				setLoading(false);
 			})
 			.catch((err) => {
-				if (err instanceof CanceledError) return;
+				if (err instanceof CanceledError) return null;
 				setError(err.message);
 				setLoading(false);
 			});
