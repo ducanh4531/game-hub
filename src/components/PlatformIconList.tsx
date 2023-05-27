@@ -38,7 +38,7 @@ const PlatformIconList = ({ platforms }: PlatformIconListProps) => {
 			{/* numeric means this value  will be a multiple of theme.space => default space: 4px*/}
 			{platforms.map((platform) => (
 				<Icon
-					key={platform.slug}
+					key={platform.id}
 					as={iconMap[platform.slug]}
 					color="gray.500"
 				/>
