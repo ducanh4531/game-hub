@@ -5,3 +5,7 @@ use git log --oneline to check commit tree history
 start project:
 yarn install
 yarn dev
+
+create component PlatformSelector.tsx
+use Menu comp
+create hook usePlatforms.ts
