@@ -6,6 +6,3 @@ start project:
 yarn install
 yarn dev
 
-create component PlatformSelector.tsx
-use Menu comp
-create hook usePlatforms.ts

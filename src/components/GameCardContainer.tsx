@@ -1,5 +1,5 @@
-import { Box } from "@chakra-ui/react";
 import { ReactNode } from "react";
+import { Box } from "@chakra-ui/react";
 
 interface GameCardContainerProps {
 	children: ReactNode;
