@@ -6,3 +6,4 @@ start project:
 yarn install
 yarn dev
 
+create SortSelector.tsx component
