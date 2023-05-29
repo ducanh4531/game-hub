@@ -21,9 +21,9 @@ const GenreList = ({ onSelectGenre, selectedGenre }: GenreListProps) => {
 
 	if (error) return null;
 
-	return isLoading ? (
-		<Spinner />
-	) : (
+	if (isLoading) return <Spinner />;
+
+	return (
 		<>
 			<Heading fontSize="2xl" marginBottom={3}>
 				Genres
