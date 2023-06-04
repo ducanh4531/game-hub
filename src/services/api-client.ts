@@ -1,5 +1,10 @@
 import axios from "axios";
 
+export interface FetchResponse<T> {
+	count: number;
+	results: T[];
+}
+
 // create axios instance with custom configuration
 const axiosInstance = axios.create({
 	baseURL: "https://api.rawg.io/api",
@@ -8,14 +13,15 @@ const axiosInstance = axios.create({
 	},
 });
 
-export class APIClient<T> {
+class APIClient<T> {
 	endpoint: string;
 
 	constructor(endpoint: string) {
 		this.endpoint = endpoint;
 	}
 
-	getAll = () => axiosInstance.get<T>(this.endpoint).then((res) => res.data);
+	getAll = (data?: object) =>
+		axiosInstance.get<T>(this.endpoint, data).then((res) => res.data);
 }
 
-export default axiosInstance;
+export default APIClient;
