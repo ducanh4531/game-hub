@@ -1,4 +1,4 @@
-import APIClient, { FetchResponse } from "./api-client";
+import APIClient from "./api-client";
 
 export interface Platform {
 	id: number;
@@ -6,6 +6,4 @@ export interface Platform {
 	slug: string;
 }
 
-export default new APIClient<FetchResponse<Platform>>(
-	"/platforms/lists/parents"
-);
+export default new APIClient<Platform>("/platforms/lists/parents");

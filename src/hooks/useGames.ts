@@ -4,7 +4,6 @@ import { CACHE_KEY_GAMES } from "../constants";
 import { FetchResponse } from "../services/api-client";
 import gameService, { Game } from "../services/gameService";
 
-
 // there are 3 args:
 // endpoint, an axios request config obj (in this obj, can pass data to req body), dependencies array
 // const useGames = (gameQuery: GameQuery) =>

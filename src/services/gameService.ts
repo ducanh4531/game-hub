@@ -1,4 +1,4 @@
-import APIClient, { FetchResponse } from "./api-client";
+import APIClient from "./api-client";
 import { Platform } from "./platformService";
 
 export interface Game {
@@ -10,4 +10,4 @@ export interface Game {
 	rating_top: number;
 }
 
-export default new APIClient<FetchResponse<Game>>("/games");
+export default new APIClient<Game>("/games");

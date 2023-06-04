@@ -1,4 +1,4 @@
-import APIClient, { FetchResponse } from "./api-client";
+import APIClient from "./api-client";
 
 export interface Genre {
 	id: number;
@@ -6,4 +6,4 @@ export interface Genre {
 	image_background: string;
 }
 
-export default new APIClient<FetchResponse<Genre>>("/genres");
+export default new APIClient<Genre>("/genres");
