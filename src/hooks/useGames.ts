@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import { GameQuery } from "../App";
 import { CACHE_KEY_GAMES } from "../constants";
 import { FetchResponse } from "../services/api-client";
@@ -21,13 +21,33 @@ import gameService, { Game } from "../services/gameService";
 // 	);
 
 const useGames = (gameQuery: GameQuery) => {
-	return useQuery<FetchResponse<Game>, Error>({
+	gameQuery.page_size = 10;
+	// return useQuery<FetchResponse<Game>, Error>({
+	// 	queryKey: CACHE_KEY_GAMES
+	// 		? [...CACHE_KEY_GAMES, gameQuery]
+	// 		: CACHE_KEY_GAMES,
+	// 	queryFn: () =>
+	// 		gameService.getAll({
+	// 			params: {
+	// 				genres: gameQuery.genre?.id,
+	// 				parent_platforms: gameQuery.platform?.id,
+	// 				ordering: gameQuery.sortOrder,
+	// 				search: gameQuery.searchText,
+	// 			},
+	// 		}),
+	// 	staleTime: 0.5 * 60 * 60 * 1_000, // 30 mins
+	// });
+
+	return useInfiniteQuery<FetchResponse<Game>, Error>({
 		queryKey: CACHE_KEY_GAMES
 			? [...CACHE_KEY_GAMES, gameQuery]
 			: CACHE_KEY_GAMES,
-		queryFn: () =>
+		queryFn: ({ pageParam }) =>
 			gameService.getAll({
 				params: {
+					// page: (pageParam - 1) * pageSize,
+					page: pageParam,
+					page_size: gameQuery.page_size,
 					genres: gameQuery.genre?.id,
 					parent_platforms: gameQuery.platform?.id,
 					ordering: gameQuery.sortOrder,
@@ -35,6 +55,8 @@ const useGames = (gameQuery: GameQuery) => {
 				},
 			}),
 		staleTime: 0.5 * 60 * 60 * 1_000, // 30 mins
+		getNextPageParam: (lastPage, allPages) =>
+			lastPage.next ? allPages.length + 1 : undefined,
 	});
 };
 
