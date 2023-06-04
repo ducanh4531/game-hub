@@ -1,18 +1,18 @@
-import { IconType } from "react-icons";
 import { HStack, Icon } from "@chakra-ui/react";
+import { IconType } from "react-icons";
+import { BsGlobe } from "react-icons/bs"; //bootstrap
 import {
-	FaWindows,
-	FaPlaystation,
-	FaXbox,
+	FaAndroid,
 	FaApple,
 	FaLinux,
-	FaAndroid,
+	FaPlaystation,
+	FaWindows,
+	FaXbox,
 } from "react-icons/fa"; //Font-awesome lib
 import { MdPhoneIphone } from "react-icons/md"; //material design
 import { SiNintendo } from "react-icons/si";
-import { BsGlobe } from "react-icons/bs"; //bootstrap
+import { Platform } from "../services/platformService";
 
-import { Platform } from "../hooks/useGames";
 
 interface PlatformIconListProps {
 	platforms: Platform[];

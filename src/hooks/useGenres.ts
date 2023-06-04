@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { CACHE_KEY_GENRES } from "../constants";
+import genres from "../data/genres";
 import genreService, { Genre } from "../services/genreService";
 import { FetchResponse } from "./useData";
-import genres from "../data/genres";
 
 const useGenres = () => {
 	return useQuery<FetchResponse<Genre>, Error>({
@@ -12,7 +12,7 @@ const useGenres = () => {
 		// the list of genres hardly changes, so no need to fetch data from backend in 24 hours
 		staleTime: 24 * 60 * 60 * 100, // 24 hours
 
-		// can set initial data, so no need to go to backend and show users the spinner
+		// can set initial data, so no need to go to backend and show users the spinner => improve performance of app
 		// if set initialData: genres => get error since its type is not of type <FetchResponse<Genre>>
 		// THERE ARE 2 SOLUTIONS:
 

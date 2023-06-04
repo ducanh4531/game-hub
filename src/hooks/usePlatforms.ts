@@ -1,5 +1,16 @@
+import { useQuery } from "@tanstack/react-query";
+import { CACHE_KEY_PLATFORMS } from "../constants";
 import platforms from "../data/platforms";
+import platformService, { Platform } from "../services/platformService";
+import { FetchResponse } from "./useData";
 
-const usePlatforms = () => ({ data: platforms, error: null });
+const usePlatforms = () => {
+	return useQuery<FetchResponse<Platform>, Error>({
+		queryKey: CACHE_KEY_PLATFORMS,
+		queryFn: platformService.getAll,
+		staleTime: 24 * 60 * 60 * 1000, // after 24 hours, cache will become stale and it fetches new data from backend
+		initialData: { count: platforms.length, results: platforms },
+	});
+};
 
 export default usePlatforms;

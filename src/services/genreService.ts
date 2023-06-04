@@ -7,6 +7,4 @@ export interface Genre {
 	image_background: string;
 }
 
-const genreService = new APIClient<FetchResponse<Genre>>("/genres");
-
-export default genreService;
+export default new APIClient<FetchResponse<Genre>>("/genres");
