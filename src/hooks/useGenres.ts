@@ -20,7 +20,7 @@ const useGenres = () => {
 		// BUT IT WILL REQUIRE EXTRA WORK
 
 		// 2/ CHANGE THE initialData value TO:
-		initialData: { count: genres.length, results: genres },
+		initialData: { count: genres.length, results: genres, next: null },
 	});
 };
 

@@ -21,7 +21,7 @@ import gameService, { Game } from "../services/gameService";
 // 	);
 
 const useGames = (gameQuery: GameQuery) => {
-	gameQuery.page_size = 10;
+	// gameQuery.page_size = 10;
 	// return useQuery<FetchResponse<Game>, Error>({
 	// 	queryKey: CACHE_KEY_GAMES
 	// 		? [...CACHE_KEY_GAMES, gameQuery]
@@ -45,16 +45,15 @@ const useGames = (gameQuery: GameQuery) => {
 		queryFn: ({ pageParam }) =>
 			gameService.getAll({
 				params: {
-					// page: (pageParam - 1) * pageSize,
 					page: pageParam,
-					page_size: gameQuery.page_size,
+					// page_size: gameQuery.page_size,
 					genres: gameQuery.genre?.id,
 					parent_platforms: gameQuery.platform?.id,
 					ordering: gameQuery.sortOrder,
 					search: gameQuery.searchText,
 				},
 			}),
-		staleTime: 0.5 * 60 * 60 * 1_000, // 30 mins
+		staleTime: 24 * 60 * 60 * 1_000, // 24 hours
 		getNextPageParam: (lastPage, allPages) =>
 			lastPage.next ? allPages.length + 1 : undefined,
 	});
