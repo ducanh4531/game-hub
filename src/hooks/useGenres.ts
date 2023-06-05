@@ -18,9 +18,10 @@ const useGenres = () => {
 
 		// 1/ CHANGE THE genres FORMAT IN "../data/genres.ts" TO TYPE OF <FetchResponse<Genre>> FROM BACKEND,
 		// BUT IT WILL REQUIRE EXTRA WORK
+		initialData: genres,
 
 		// 2/ CHANGE THE initialData value TO:
-		initialData: { count: genres.length, results: genres, next: null },
+		// initialData: { count: genres.length, results: genres, next: null },
 	});
 };
 
