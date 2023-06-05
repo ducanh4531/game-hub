@@ -7,12 +7,10 @@ import GenreList from "./components/GenreList";
 import NavBar from "./components/NavBar";
 import PlatformSelector from "./components/PlatformSelector";
 import SortSelector from "./components/SortSelector";
-import { Genre } from "./services/genreService";
-import { Platform } from "./services/platformService";
 
 export interface GameQuery {
-	genre: Genre | null;
-	platform: Platform | null;
+	genreId: number | undefined; // undefined: the absence of a value | optional para
+	platformId: number | undefined; // null: the intentional absence of a value | optional para
 	sortOrder: string;
 	searchText: string;
 	page_size: number;
@@ -43,10 +41,10 @@ function App() {
 			<Show above="lg">
 				<GridItem area="aside" paddingX={5}>
 					<GenreList
-						onSelectGenre={(genre) =>
-							setGameQuery({ ...gameQuery, genre })
+						onSelectGenre={(genreId) =>
+							setGameQuery({ ...gameQuery, genreId })
 						}
-						selectedGenre={gameQuery.genre}
+						selectedGenreId={gameQuery.genreId}
 					/>
 				</GridItem>
 			</Show>
@@ -56,10 +54,10 @@ function App() {
 					<Flex marginBottom={3}>
 						<Box marginRight={5}>
 							<PlatformSelector
-								onSelectPlatform={(platform) =>
-									setGameQuery({ ...gameQuery, platform })
+								onSelectPlatform={(platformId) =>
+									setGameQuery({ ...gameQuery, platformId })
 								}
-								selectedPlatform={gameQuery.platform}
+								selectedPlatformId={gameQuery.platformId}
 							/>
 						</Box>
 						<SortSelector
