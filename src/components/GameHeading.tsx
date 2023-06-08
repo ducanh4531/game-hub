@@ -1,25 +1,23 @@
 import { Heading } from "@chakra-ui/react";
+import { shallow } from "zustand/shallow";
 
-import { GameQuery } from "../App";
 import useGenre from "../hooks/useGenre";
 import usePlatform from "../hooks/usePlatform";
+import useGameQueryStore from "../store";
 
-interface GameHeadingProps {
-	gameQuery: GameQuery;
-}
+const GameHeading = () => {
+	const { genreId, platformId } = useGameQueryStore(
+		(s) => ({
+			genreId: s.gameQuery.genreId,
+			platformId: s.gameQuery.platformId,
+		}),
+		shallow
+	);
 
-const GameHeading = ({ gameQuery }: GameHeadingProps) => {
 	// fetching and caching data
 	// find platform and genre obj based on their id
-	const genre = useGenre(gameQuery.genreId);
-	const platform = usePlatform(gameQuery.platformId);
-
-	// const platform = platforms.results.find(
-	// 	(platform) => platform.id === gameQuery.platformId
-	// );
-	// const genre = genres.results.find(
-	// 	(genre) => genre.id === gameQuery.genreId
-	// );
+	const genre = useGenre(genreId);
+	const platform = usePlatform(platformId);
 
 	// generate heading text based on their name
 	const heading = `${platform?.name || ""} ${genre?.name || ""} Games`;
