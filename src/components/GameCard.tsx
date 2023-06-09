@@ -20,7 +20,18 @@ const GameCard = ({ game }: GameCardProps) => {
 				/>
 				<HStack justifyContent="space-between" mt={2} mb={2}>
 					<PlatformIconList
-						platforms={game.parent_platforms.map((p) => p.platform)}
+						platforms={
+							game.parent_platforms
+								? game.parent_platforms.map((p) => p.platform)
+								: [
+										{
+											id: 0,
+											name: "UNKNOWN",
+											slug: "unknown",
+										},
+										// eslint-disable-next-line no-mixed-spaces-and-tabs
+								  ]
+						}
 					/>
 					<CriticScore score={game.metacritic} />
 				</HStack>

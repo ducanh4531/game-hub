@@ -1,5 +1,6 @@
 import { HStack, Icon } from "@chakra-ui/react";
 import { IconType } from "react-icons";
+import { MdDeviceUnknown } from "react-icons/md";
 import { BsGlobe } from "react-icons/bs"; //bootstrap
 import {
 	FaAndroid,
@@ -29,6 +30,7 @@ const PlatformIconList = ({ platforms }: PlatformIconListProps) => {
 		ios: MdPhoneIphone,
 		android: FaAndroid,
 		web: BsGlobe,
+		unknown: MdDeviceUnknown,
 	};
 
 	return (
