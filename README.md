@@ -3,7 +3,8 @@
 ### The application does the following:
 
 -   execute HTTP requests to Rawg API with Axios,
--   allows users to filter by genres, platforms, search text or sort by default criteria
+-   allow users to filter by genres, platforms, search text or sort by default criteria,
+-		implement infinite scroll, pagination and skeleton loading as well,
 -   The application ...
 
 <img width="1264" alt="Game hub homepage" src="src/assets/homepage.png">
