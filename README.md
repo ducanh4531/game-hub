@@ -1,7 +1,33 @@
-hello world
+# Game hub application with ReactJs
 
-use git log --oneline to check commit tree history
+### The application does the following:
 
-start project:
-yarn install
-yarn dev
+-   execute HTTP requests to Rawg API with Axios,
+-   allows users to filter by genres, platforms, search text or sort by default criteria.
+-   The application ...
+
+<img width="1264" alt="Game hub homepage" src="src/assets/homepage.png">
+
+## Live Demo
+
+[View Live Version](https://game-hub-eight-wine.vercel.app/)
+
+## How-to Guide
+
+[Read the article on ...](link)
+
+## Installation
+
+-   Clone the project repository. Don't forget to star the repo 😉
+-   Run `yarn install` to install its dependencies.
+-   Start the development server by running `yarn run dev`
+
+## Tools
+
+-   [NextJS 13](https://nextjs.org/docs)
+-   [Chakra UI](https://chakra-ui.com/)
+-   [Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)
+-   [React Query](https://tanstack.com/query/latest/docs/react/overview)
+-   [React Icons](https://react-icons.github.io/react-icons)
+-   [Axios](https://axios-http.com/docs/intro)
+-   [React Infinite Scroll Component](https://github.com/ankeetmaini/react-infinite-scroll-component)
