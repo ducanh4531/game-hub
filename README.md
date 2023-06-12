@@ -1,9 +1,9 @@
-# Game hub application with ReactJs
+# Game hub application with ReactJS
 
 ### The application does the following:
 
 -   execute HTTP requests to Rawg API with Axios,
--   allows users to filter by genres, platforms, search text or sort by default criteria.
+-   allows users to filter by genres, platforms, search text or sort by default criteria
 -   The application ...
 
 <img width="1264" alt="Game hub homepage" src="src/assets/homepage.png">
@@ -24,7 +24,7 @@
 
 ## Tools
 
--   [NextJS 13](https://nextjs.org/docs)
+-   [ReactJS](https://react.dev/)
 -   [Chakra UI](https://chakra-ui.com/)
 -   [Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)
 -   [React Query](https://tanstack.com/query/latest/docs/react/overview)
