@@ -4,7 +4,6 @@ import NavBar from "../components/NavBar";
 
 const ErrorPage = () => {
 	const error = useRouteError();
-	console.log("🚀 ~ file: ErrorPage.tsx:5 ~ ErrorPage ~ error:", error);
 
 	return (
 		<>
