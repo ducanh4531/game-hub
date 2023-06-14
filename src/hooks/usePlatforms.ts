@@ -2,8 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 import ms from "ms";
 import { CACHE_KEY_PLATFORMS } from "../constants";
 import platforms from "../data/platforms";
+import { Platform } from "../entities/Platform";
 import { FetchResponse } from "../services/api-client";
-import platformService, { Platform } from "../services/platformService";
+import platformService from "../services/platformService";
 
 const usePlatforms = () => {
 	return useQuery<FetchResponse<Platform>, Error>({

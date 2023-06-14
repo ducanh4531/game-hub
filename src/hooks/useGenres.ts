@@ -3,8 +3,9 @@ import ms from "ms";
 import { CACHE_KEY_GENRES } from "../constants";
 
 import genres from "../data/genres";
+import { Genre } from "../entities/Genre";
 import { FetchResponse } from "../services/api-client";
-import genreService, { Genre } from "../services/genreService";
+import genreService from "../services/genreService";
 
 const useGenres = () => {
 	return useQuery<FetchResponse<Genre>, Error>({
