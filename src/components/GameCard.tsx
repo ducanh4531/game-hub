@@ -26,7 +26,7 @@ const GameCard = ({ game }: GameCardProps) => {
 							platforms={
 								game.parent_platforms
 									? game.parent_platforms.map(
-											(p) => p.platform
+											({ platform }) => platform
 									  )
 									: [
 											{
