@@ -16,7 +16,7 @@ const useGames = () => {
 		queryKey: CACHE_KEY_GAMES
 			? [...CACHE_KEY_GAMES, gameQuery]
 			: CACHE_KEY_GAMES,
-		queryFn: ({ pageParam }) =>
+		queryFn: ({ pageParam = 1 }) =>
 			gameService.getAll({
 				params: {
 					page: pageParam,
