@@ -3,7 +3,7 @@ interface ResolutionTrailer {
 	max: string;
 }
 
-export interface Trailer {
+export default interface Trailer {
 	id: number;
 	name: string;
 	preview: string;

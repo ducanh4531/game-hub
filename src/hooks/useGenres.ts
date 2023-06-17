@@ -3,7 +3,7 @@ import ms from "ms";
 import { CACHE_KEY_GENRES } from "../constants";
 
 import genres from "../data/genres";
-import { Genre } from "../entities/Genre";
+import Genre from "../entities/Genre";
 import { FetchResponse } from "../services/api-client";
 import genreService from "../services/genreService";
 

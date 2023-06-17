@@ -2,7 +2,7 @@
 import { useQuery } from "@tanstack/react-query";
 import ms from "ms";
 import { CACHE_KEY_GAMES } from "../constants";
-import { Game } from "../entities/Game";
+import Game from "../entities/Game";
 import gameDetailService from "../services/gameDetailService";
 
 const useGame = (slug: string) => {

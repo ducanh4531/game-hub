@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa"; //Font-awesome lib
 import { MdDeviceUnknown, MdPhoneIphone } from "react-icons/md";
 import { SiNintendo } from "react-icons/si";
-import { Platform } from "../entities/Platform";
+import Platform from "../entities/Platform";
 
 interface PlatformIconListProps {
 	platforms: Platform[];
