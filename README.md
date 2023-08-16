@@ -4,7 +4,7 @@
 
 -   execute HTTP requests to Rawg API with Axios,
 -   allow users to filter by genres, platforms, search text or sort by default criteria,
--		implement infinite scroll, pagination and skeleton loading as well,
+-   implement infinite scroll, pagination and skeleton loading as well,
 -   users are able to redirect to routers so that can view single game or list of multiple games as well 
 
 <img width="1264" alt="Game hub homepage" src="src/assets/homepage.png">
